@@ -1,0 +1,217 @@
+<!doctype html>
+<html> 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> PokeAPI </title>
+  <link rel="shortcut icon" href="src/assets/pokeball.ico">
+  <link rel="stylesheet" href="src/css/styles.css">
+</head>
+
+<body>    
+  <!-- Navbar -->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light py-3 border-bottom border-gray bg-c-lightG" style="z-index: 10;">
+      <div class="container d-flex align-items-center justify-content-beween">
+        <a class="navbar-brand" href="#">
+          <img src='src/assets/img/pokeball.png' width="75" alt="pokeball">
+          <div class="font-weight-bold" style="display: inline-block;">
+            <h5 class="text-muted" style="display: inline-block; font-weight: 800;">POKE </h5><b> API</b>
+          </div> 
+        </a>      
+      </div>
+    </nav>    
+  </header>
+  
+  
+  <!-- Welcome section 1 -->
+  <section>
+    <div class="py-5">
+      <div class="container text-center py-5">
+        <h1 class="lined lined-center font-weight-bold"> <span class="text-primary"> POKEDEX </span> API </h1>
+        <h4 class="text-muted py-3 lined lined-center py-3">Conoce los pokemons </h4>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Welcome section 2 -->
+  <section class="grad-4"> 
+    <div class="cont">
+      <div class="container text-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-10 mx-auto align-items-center">              
+              <h1 class="lined lined-center font-weight-bold">Busca el pokemon que desees</h1>
+              <h5 class="py-4">Puedes usar la búsqueda por ID o por nombre, una búsqueda aleatoria o bien</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </section>
+  
+  
+  <!-- Search -->
+  <section class="py-4">
+    <div class="container py-5">
+      <div class="row mb-5 py-1">
+        <div class="col-lg-12">
+          <h1 class="h1 text-center"> <b> Explora los pokemons </b> </h1>
+        </div>
+      </div>
+      
+      <ul class="nav border-right nav-pills mb-3 flex-column flex-sm-row text-center" id="pills-tab" role="tablist">
+        <li class="nav-item flex-sm-fill"><a class="nav-link active" id="id_name-tab" data-toggle="pill" href="#id_name" role="tab" aria-controls="id_name" aria-selected="true">Buscar por ID o nombre</a></li>
+        <li class="nav-item flex-sm-fill"><a class="nav-link" id="random-tab" data-toggle="pill" href="#random" role="tab" aria-controls="random" aria-selected="false">Búsqueda random</a></li>
+        <li class="nav-item flex-sm-fill"><a class="nav-link" id="multiple-tab" data-toggle="pill" href="#multiple" role="tab" aria-controls="multiple" aria-selected="false">Búsqueda múltiple</a></li>
+      </ul>
+      
+      <div class="tab-content" id="pills-tabContent">
+        
+        <!-- Panel 1 (Search by ID) -->
+        <div class="tab-pane py-4 fade show active" id="id_name" role="tabpanel" aria-labelledby="id_name-tab"> 
+          <div class="row"> 
+            
+            <div class="col-lg-2 mt-5 ">
+              <div class="radio">
+                <label><input type="radio" name="optradio" checked> Por ID</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="optradio"> Por nombre</label>
+              </div>
+            </div>
+            
+            <div class="col-lg-10">
+              <!-- Search input -->
+              <div class="search-bpx row py-5">
+                <div class="input-group input-group-lg mb-3">
+                  <div class="input-group-prepend">
+                    <div class="dropdown">
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item" type="button">Action</button>
+                        <button class="dropdown-item" type="button">Another action</button>
+                        <button class="dropdown-item" type="button">Something else here</button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <input type="text" class="form-control" placeholder="Buscar..." aria-label="Amount (to the nearest dollar)">
+                  <div class="input-group-append">
+                    <a class="btn btn-primary px-4" href="#"> <i class="fas fa-search fa-lg"></i> </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Search input -->
+            </div> 
+          </div> 
+        </div> <!-- End Panel 1 (Search by ID) -->
+        
+        <!-- Panel 2 (Search by ) -->
+        <div class="tab-pane py-4 fade" id="random" role="tabpanel" aria-labelledby="random-tab"> 
+          <div class="row">
+            
+          </div>
+        </div> <!-- End Panel 2 (Search by ) -->    
+        
+        <!-- Panel 3 (Search by ) -->
+        <div class="tab-pane py-4 fade" id="multiple" role="tabpanel" aria-labelledby="multiple-tab"> 
+          <div class="row">
+            
+          </div>
+        </div> <!-- End Panel 3 (Search by ) -->
+        
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <small> Información obtenida usando la PokeAPI</small>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <section class="pattern1-bg py-5 ">
+    <div class="container text-center" style="margin-top: 63px;">
+      <h1 class="lined lined-center font-weight-bold py-2"> Title here</h1>   
+      <h5 class="text-muted">Subtitle </h5>
+      <div class="row pt-1 mt-5 mb-1">
+        
+        <div class="slide-top col-md-3 col-sm-6 py-4">  
+          <i class="fas fa-users fa-3x text-accentColor-2 mb-3"></i>
+          <h5>1</h5>
+          <p class="description">1 desc</p>
+        </div> 
+        
+        <div class="slide-top col-md-3 col-sm-6 py-4">  
+          <i class="fas fa-users fa-3x text-accentColor-2 mb-3"></i>
+          <h5>2</h5>
+          <p class="description">2 desc</p>
+        </div> 
+        
+        <div class="slide-top col-md-3 col-sm-6 py-4">  
+          <i class="fas fa-users fa-3x text-accentColor-2 mb-3"></i>
+          <h5>3</h5>
+          <p class="description">3 desc</p>
+        </div> 
+        
+        <div class="slide-top col-md-3 col-sm-6 py-4">  
+          <i class="fas fa-users fa-3x text-accentColor-2 mb-3"></i>
+          <h5>4</h5>
+          <p class="description">4 desc</p>
+        </div> 
+      </div>         
+    </div>
+  </section>
+
+  
+  <section class="grad-7">
+    <div class="container">
+      <div class="row align-items-center text-center">
+        
+        <div class="col-lg-7">
+          <h3 class="lined lined-center"> <b> Main title </b></h3>
+          <h5 class="h5 txt-shadow"> Subtitle </h5>
+        </div>
+        
+        <div class="col-lg-1"> </div>
+        <div class="col-lg-4 grad">
+          <a ref="#" class="btn btn-lg btn-block btn-outline-cdark3 bg-c-light text-cdark3" role="button">
+            <i class="fab fa-facebook fa-3x"> </i> <br> Hello 
+          </a>
+        </div>
+      </div> 
+    </div>
+  </section>
+  
+  
+  
+  <!-- Footer -->
+  <footer class="footer bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">  
+          <p class="text-muted small mb-4 mb-lg-0 py-2">2020, FCJA</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="https://github.com/PokeAPI/pokedex-promise-v2" target="_blank"> 
+                <i class="fab fa-github fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  
+  <script src="https://kit.fontawesome.com/0b5e6aae1f.js" crossorigin="anonymous"></script>      
+  <script src="node_modules/jquery/dist/jquery.min.js"> </script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"> </script>
+</body>
+</html>

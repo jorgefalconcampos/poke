@@ -1,0 +1,75 @@
+
+//------------- Imports -------------//
+
+@import 'customVariables'; 
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800,900&display=swap'); //Nunito Sans font
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+// @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css');
+
+
+//------------- Overrides -------------//
+
+// Some variables may comes from 'myVariables.scss' file, identified with: //*from-cv
+
+$font-family-sans-serif: "Comic Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:       $font-family-sans-serif !default;
+
+$body-bg: #f5f5f5;
+
+
+$medium-gray: $medium-gray; //*from cv
+$dark-gray: $dark-gray; //*from cv
+$darker-gray: $darker-gray; //*from cv
+
+$nav-link-padding-y: .35rem;
+
+$hr-border-color:  $even-darker-gray;
+
+$link-color: #378FB4;
+
+$link-hover-decoration: none;
+
+
+
+//Overriding and adding colors to the map
+$theme-colors: ( 
+    "primary": #EF4036, 
+    "accentColor-1": #FECC00, 
+    "accentColor-2": #378FB4,
+    "c-light": $lighter-gray,
+    "c-lightG": $light-gray,
+    "cdark0": #cccccc,
+    "cdark1": $medium-gray,
+    "cdark2": $dark-gray,
+    "cdark3": $darker-gray,
+    "cdark4": $even-darker-gray,
+);
+
+//This function gets the color from the array of colors
+@function theme-color($key: "primary") { @return map-get($theme-colors, $key); }
+ 
+
+
+
+//------------- Custom variables -------------//
+
+
+$primary: theme-color("primary"); 
+
+
+
+//------------- Applying changes to Bootstrap -------------//
+
+@import"../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+
+body
+{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
