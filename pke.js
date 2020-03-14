@@ -53,6 +53,3 @@ function searchByID(poke) {
   });
 }
 
-
-
-
