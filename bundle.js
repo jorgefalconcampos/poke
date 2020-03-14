@@ -2327,37 +2327,24 @@ function searchByID(poke) {
 
 
 
+
+
+
 function searchByName(poke) {
   console.log("Nombre del pokemon buscado: "+poke);
-  P.resource('/api/v2/pokemon/?offset=20&limit=800') //Consuming directly from the PokeAPI as resource 
-
+  P.resource('/api/v2/pokemon/?limit=800') //Consuming directly from the PokeAPI as resource 
   .then(function(response) {
-    console.log(response);
-    // var pokes = response.results;
-    // var index=0;
-    // var found;
-    // var entry;
-
-    var allPokes = response.results;
-
-
-
-  
-      for (var i=0; i < allPokes.length; i++) {
-          if (allPokes[i].name === poke) {
-            console.log("El indice de "+poke+" es el [:"+i+"]")
-            // return myArray[i];
-          }
-      }
-  
-
-  
-
     
-    // search["query_result"].value="\n * Nombre del pokemon: "+pokeName 
-    // + "\n\n * ID del pokemon: "+pokeID
-    // + "\n\n * Movimiento: "+move; 
-    // console.log('Pokemon info loaded succesfully'); 
+    var allPokes = response.results; //variable with all pokes as array objects
+
+    for (var i=0; i < allPokes.length; i++) { //looping trough the lenght of the array (800)
+      if (allPokes[i].name === poke) {  //if any i object has the name property equal as the desired, that's our pokemon!
+        console.log(`El indice de ${poke} es el #${i+1}`);
+        var desiredPoke = i+1;
+        break;
+      }
+    }
+    searchByID(desiredPoke);
   })
   .catch(function(error){
     console.log('There was an error while retrieving data from pokemon: ', error);

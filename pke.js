@@ -54,3 +54,23 @@ function searchByID(poke) {
 }
 
 
+function searchByName(poke) {
+  console.log("Nombre del pokemon buscado: "+poke);
+  P.resource('/api/v2/pokemon/?limit=800') //Consuming directly from the PokeAPI as resource 
+  .then(function(response) {
+    
+    var allPokes = response.results; //variable with all pokes as array objects
+
+    for (var i=0; i < allPokes.length; i++) { //looping trough the lenght of the array (800)
+      if (allPokes[i].name === poke) {  //if any i object has the name property equal as the desired, that's our pokemon!
+        console.log(`El indice de ${poke} es el #${i+1}`);
+        var desiredPoke = i+1;
+        break;
+      }
+    }
+    searchByID(desiredPoke);
+  })
+  .catch(function(error){
+    console.log('There was an error while retrieving data from pokemon: ', error);
+  });
+}
