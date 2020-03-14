@@ -72,47 +72,134 @@
         
         <!-- Panel 1 (Search by ID) -->
         <div class="tab-pane py-4 fade show active" id="id_name" role="tabpanel" aria-labelledby="id_name-tab"> 
-          <div class="row"> 
-            
-            <div class="col-lg-2 mt-5 ">
-              <div class="radio">
-                <label><input type="radio" name="optradio" checked> Por ID</label>
-              </div>
-              <div class="radio">
-                <label><input type="radio" name="optradio"> Por nombre</label>
-              </div>
-            </div>
-            
-            <div class="col-lg-10">
-              <!-- Search input -->
-              <div class="search-bpx row py-5">
-                <div class="input-group input-group-lg mb-3">
-                  <div class="input-group-prepend">
-                    <div class="dropdown">
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button class="dropdown-item" type="button">Action</button>
-                        <button class="dropdown-item" type="button">Another action</button>
-                        <button class="dropdown-item" type="button">Something else here</button>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <input type="text" class="form-control" placeholder="Buscar..." aria-label="Amount (to the nearest dollar)">
-                  <div class="input-group-append">
-                    <a class="btn btn-primary px-4" href="#"> <i class="fas fa-search fa-lg"></i> </a>
-                  </div>
+          
+          <form id="search" action="javascript:;">
+            <div class="row"> 
+              <div class="col-lg-2 mt-5 ">
+                <div class="radio">
+                  <label><input type="radio" id="searchtype_id" name="optradio" checked> Por ID</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" id="searchtype_name" name="optradio"> Por nombre</label>
                 </div>
               </div>
-              <!-- End Search input -->
+              
+              <div class="col-lg-10">
+                <!-- Search input -->
+                <div class="row py-5">
+                  <div class="input-group input-group-lg mb-3">
+                    
+                    <input type="text" id="search_txt" name="txto" class="form-control" placeholder="Buscar..." aria-label="">
+                    
+                    
+                    <button type="submit" class="btn btn-primary">Buscar
+                      <i class="fas fa-search fa-md"></i>
+                    </button>
+
+
+                    <!-- <a type="submit" value="calcular" class="btn btn-primary px-5" href="#"> 
+                      <i class="fas fa-search fa-2x"></i>
+                    </a>
+                     -->
+                  </div>
+                </div>  
+              </div>            
             </div> 
-          </div> 
+
+
+            <!-- Output -->
+            <div class="row justify-content-center py-4">
+              <div class="col-lg-5">
+                  <textarea readonly name="query_result" rows="6" cols="20" class="form-control">
+                  </textarea>
+              </div>
+
+              <div class="col-lg-6 ml-5 text-center">
+                <div class="row justify-content-center">
+
+                  <div class="slide-top mx-5 pt-4">  
+                    <img name="sprite_front" src='src/assets/img/pokeball.png' width="95" alt="sprite">
+                    <p class="description mt-1">Sprite front</p>
+                  </div> 
+
+                  <div class="slide-top mx-5 pt-4">  
+                    <img name="sprite_back" src='src/assets/img/pokeball.png' width="95" alt="sprite">
+                    <p class="description mt-1">Sprite back</p>
+                  </div> 
+
+              
+                </div> 
+              </div>
+            </div>
+
+            
+
+            <!-- Reset/Clean -->
+            <div class="row justify-content-center">
+              <button type="reset" class="btn btn-primary" onclick="resetImg()">Limpiar</button>
+            </div>
+
+          
+
+        
+
+
+
+          </form>
+
+
+          
         </div> <!-- End Panel 1 (Search by ID) -->
         
         <!-- Panel 2 (Search by ) -->
         <div class="tab-pane py-4 fade" id="random" role="tabpanel" aria-labelledby="random-tab"> 
-          <div class="row">
+             
+          <form id="random_search" action="javascript:;">
+            <div class="row"> 
             
-          </div>
+                 
+                <button type="submit" class="py-3 mt-3 mb-3 btn btn-primary btn-lg btn-block mx-4">Buscar pokemon aleatorio
+                  <i class="fas fa-random fa-xl"></i>
+                </button>
+
+              
+                  
+            </div> 
+
+
+            <!-- Output -->
+            <div class="row justify-content-center py-4">
+              <div class="col-lg-5">
+                  <textarea readonly name="query_result" rows="6" cols="20" class="form-control">
+                  </textarea>
+              </div>
+
+              <div class="col-lg-6 ml-5 text-center">
+                <div class="row justify-content-center">
+
+                  <div class="slide-top mx-5 pt-4">  
+                    <img name="sprite_front" src='src/assets/img/pokeball.png' width="95" alt="sprite">
+                    <p class="description mt-1">Sprite front</p>
+                  </div> 
+
+                  <div class="slide-top mx-5 pt-4">  
+                    <img name="sprite_back" src='src/assets/img/pokeball.png' width="95" alt="sprite">
+                    <p class="description mt-1">Sprite back</p>
+                  </div> 
+
+              
+                </div> 
+              </div>
+            </div>
+
+            
+
+            <!-- Reset/Clean -->
+            <div class="row justify-content-center">
+              <button type="reset" class="btn btn-primary" onclick="resetImg()">Limpiar</button>
+            </div>
+
+          </form>
         </div> <!-- End Panel 2 (Search by ) -->    
         
         <!-- Panel 3 (Search by ) -->
@@ -121,51 +208,33 @@
             
           </div>
         </div> <!-- End Panel 3 (Search by ) -->
-        
+
       </div>
       
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <small> Información obtenida usando la PokeAPI</small>
+      <div class="row justify-center">
+        <div class="col-lg-8 ">
+          <div class="">
+            
+            <!-- <div class="">
+              <ul id="myULContainer"></ul> 
+              <script type="application/javascript" src="console-log-html.min.js"></script> 
+              <script>
+                  ConsoleLogHTML.connect(document.getElementById("myULContainer")); // Redirect log messages
+                  ConsoleLogHTML.disconnect(); // Stop redirecting
+              </script> 
+            </div> -->
+
+
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  
-  
-  <section class="pattern1-bg py-5 ">
-    <div class="container text-center" style="margin-top: 63px;">
-      <h1 class="lined lined-center font-weight-bold py-2"> Title here</h1>   
-      <h5 class="text-muted">Subtitle </h5>
-      <div class="row pt-1 mt-5 mb-1">
-        
-        <div class="slide-top col-md-3 col-sm-6 py-4">  
-          <i class="fas fa-users fa-3x text-accentColor-2 mb-3"></i>
-          <h5>1</h5>
-          <p class="description">1 desc</p>
-        </div> 
-        
-        <div class="slide-top col-md-3 col-sm-6 py-4">  
-          <i class="fas fa-users fa-3x text-accentColor-2 mb-3"></i>
-          <h5>2</h5>
-          <p class="description">2 desc</p>
-        </div> 
-        
-        <div class="slide-top col-md-3 col-sm-6 py-4">  
-          <i class="fas fa-users fa-3x text-accentColor-2 mb-3"></i>
-          <h5>3</h5>
-          <p class="description">3 desc</p>
-        </div> 
-        
-        <div class="slide-top col-md-3 col-sm-6 py-4">  
-          <i class="fas fa-users fa-3x text-accentColor-2 mb-3"></i>
-          <h5>4</h5>
-          <p class="description">4 desc</p>
-        </div> 
-      </div>         
-    </div>
-  </section>
 
+
+    
+
+    </div>
+  </section>
+  
   
   <section class="grad-7">
     <div class="container">
@@ -193,7 +262,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">  
-          <p class="text-muted small mb-4 mb-lg-0 py-2">2020, FCJA</p>
+          <p class="text-muted small mb-4 mb-lg-0 py-2">2020</p>
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
           
@@ -208,8 +277,19 @@
       </div>
     </div>
   </footer>
+
+
+  <script> //Clean the sprites images
+    function resetImg() { 
+      search["sprite_front"].src='/src/assets/img/pokeball.png';
+      search["sprite_back"].src='/src/assets/img/pokeball.png';
+    }
+  </script>
+  <!-- <script type="module" src="pke.js"> </script> -->
+  <!-- "Pke.js" has been replaced for "bundle.js" with browserify -->
+  <script src="bundle.js"> </script>
   
-  
+  <!-- <script type="application/javascript" src="//cdn.rawgit.com/Alorel/console-log-html/master/console-log-html.min.js"></script> -->
   <script src="https://kit.fontawesome.com/0b5e6aae1f.js" crossorigin="anonymous"></script>      
   <script src="node_modules/jquery/dist/jquery.min.js"> </script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"> </script>
