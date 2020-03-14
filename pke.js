@@ -55,31 +55,4 @@ function searchByID(poke) {
 
 
 
-function searchByName(poke) {
-  console.log(poke);
-  P.resource('/api/v2/pokemon/?offset=20&limit=800') //Consuming directly from the PokeAPI as resource 
-
-  .then(function(response) {
-    console.log(response);
-    var pokes = response.results;
-    var index=0;
-    var found;
-    var entry;
-
-    for(index=0; index<pokes.length; ++index)
-    {
-      entry = a[]
-    }
-
-
-    
-    search["query_result"].value="\n * Nombre del pokemon: "+pokeName 
-    + "\n\n * ID del pokemon: "+pokeID
-    + "\n\n * Movimiento: "+move; 
-    console.log('Pokemon info loaded succesfully'); 
-  })
-  .catch(function(error){
-    console.log('There was an error while retrieving data from pokemon: ', error);
-  });
-}
 
