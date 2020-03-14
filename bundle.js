@@ -2326,4 +2326,43 @@ function searchByID(poke) {
 }
 
 
+
+function searchByName(poke) {
+  console.log("Nombre del pokemon buscado: "+poke);
+  P.resource('/api/v2/pokemon/?offset=20&limit=800') //Consuming directly from the PokeAPI as resource 
+
+  .then(function(response) {
+    console.log(response);
+    // var pokes = response.results;
+    // var index=0;
+    // var found;
+    // var entry;
+
+    var allPokes = response.results;
+
+
+
+  
+      for (var i=0; i < allPokes.length; i++) {
+          if (allPokes[i].name === poke) {
+            console.log("El indice de "+poke+" es el [:"+i+"]")
+            // return myArray[i];
+          }
+      }
+  
+
+  
+
+    
+    // search["query_result"].value="\n * Nombre del pokemon: "+pokeName 
+    // + "\n\n * ID del pokemon: "+pokeID
+    // + "\n\n * Movimiento: "+move; 
+    // console.log('Pokemon info loaded succesfully'); 
+  })
+  .catch(function(error){
+    console.log('There was an error while retrieving data from pokemon: ', error);
+  });
+}
+
+
 },{"pokedex-promise-v2":35}]},{},[37]);
